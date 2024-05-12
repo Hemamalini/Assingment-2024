@@ -1,0 +1,32 @@
+package week1.day3;
+
+import java.util.Iterator;
+
+public class RemoveDuplicateStringWords {
+
+	public static void main(String[] args) {
+		String text="We learn Java basics as part of java sessions in java week1";
+		String[] split = text.split("\\s");
+		System.out.println("Input = "+text);
+		int count=0;
+		for (int i = 0; i < split.length; i++) {
+			for (int j = i+1; j < split.length; j++) {
+				if (split[i].equalsIgnoreCase((split[j]))) {
+					split[j] = " ";
+					count=count+1;
+				}
+					}
+			
+		}
+		//System.out.println("duplicate count = " + count);
+		String output = "";
+		if (count > 0) {
+			for (int i = 0; i < split.length; i++) {
+				output = output + split[i] + " ";
+			}
+			System.out.println("output = " + output);
+		}
+	}
+}
+
+
